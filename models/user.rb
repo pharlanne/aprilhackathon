@@ -23,7 +23,7 @@ class User
   end
 
   def self.create( params )
-    query = "INSERT INTO Users ( username, reputation, image_url )
+    query = "INSERT INTO Users ( username, reputation, avatar )
     VALUES (
       '#{ params[ "username" ] }',
       #{ params[ "reputation" ]},

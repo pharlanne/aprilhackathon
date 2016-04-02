@@ -3,6 +3,9 @@ require_relative "merchant"
 require_relative "tag"
 require_relative "income"
 require_relative "target"
+require_relative "user"
+require_relative "question"
+require_relative "post"
 
 class Account
   attr_reader :transactions, :merchants, :tags, :incomes, :targets
@@ -17,9 +20,15 @@ class Account
     @posts = params[ "posts" ]
   end
 
-  def total( input )
+  def transaction_total
     result = 0
-    input.each { |i| result += i.amount }
+    @transactions.each { |t| result += t.amount }
+    return sprintf "%.2f", result
+  end
+
+  def income_total
+    result = 0
+    @incomes.each { |i| result += i.amount }
     return sprintf "%.2f", result
   end
 

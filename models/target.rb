@@ -46,7 +46,7 @@ class Target
     VALUES (
       #{ params[ "amount" ]},
       '#{ params[ "target_date" ]}',
-      #{ params[ "image_url" ]}
+      '#{ params[ "image_url" ]}'
     )"
     SqlRunner.execute( query )
     return Target.new( Target.last_entry )
