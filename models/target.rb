@@ -11,6 +11,10 @@ class Target
     @image_url = params[ "image_url" ]
   end
 
+  def amount_format
+    return sprintf "%.2f", @amount
+  end
+
   def date_format
     date = @target_date.to_s.split("-")
     return "#{ date[ 2 ]}/#{ date[ 1 ]}/#{ date[ 0 ]}"
@@ -18,6 +22,10 @@ class Target
 
   def amount_format
     return sprintf "%.2f", @amount
+  end
+
+  def days_left
+    return(Date.parse(@target_date) - Date.today).to_i
   end
 
   def self.find( id )
