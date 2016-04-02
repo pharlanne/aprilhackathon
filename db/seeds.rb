@@ -13,11 +13,11 @@ merchant1 = Merchant.create( "name" => "Tesco" )
 merchant2 = Merchant.create( "name" => "Scottish Power" )
 merchant3 = Merchant.create( "name" => "Amazon" )
 merchant4 = Merchant.create( "name"=> "Edinburgh City Council" )
-merchant5 = Merchant.create( "name" => "Domino's Pizza" )
+merchant5 = Merchant.create( "name" => "Dominos Pizza" )
 merchant6 = Merchant.create( "name" => "CodeClan" )
 merchant7 = Merchant.create( "name" => "Waitrose" )
 merchant8 = Merchant.create( "name" => "Real Foods" )
-merchant9 = Merchant.create( "name" => "Sainsbury's" )
+merchant9 = Merchant.create( "name" => "Sainsburys" )
 merchant10 = Merchant.create( "name" => "Costa Coffee" )
 merchant11 = Merchant.create( "name" => "Boots" )
 merchant12 = Merchant.create( "name" => "National Line" )
@@ -154,10 +154,10 @@ income3 = Income.create(
 )
 
 target1 = Target.create(
-  "name" => "Jarrod's Birthday Present",
+  "name" => "Jarrods Birthday Present",
   "amount" => 500,
   "target_date" => "18-July-16",
-  "image_url" => "http://49.media.tumblr.com/tumblr_lzq1yuutbh1qbe0gto1_400.gif"
+  "image_url" => ""
 )
 
 user1 = User.create(
