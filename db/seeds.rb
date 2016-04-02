@@ -83,7 +83,7 @@ transaction7 = Transaction.create(
 )
 
 transaction8 = Transaction.create(
- "amount" => 1000,
+ "amount" => 156,
  "transaction_date" => "11-April-16",
  "merchant_id" => merchant6.id,
  "tag_id" => tag5.id

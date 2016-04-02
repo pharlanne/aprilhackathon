@@ -20,6 +20,10 @@ class Target
     return sprintf "%.2f", @amount
   end
 
+  def days_left
+    return(Date.parse(@target_date) - Date.today).to_i
+  end
+
   def self.find( id )
    query = "SELECT * FROM Targets WHERE id = #{ id.to_i }"
    result = SqlRunner.execute( query )

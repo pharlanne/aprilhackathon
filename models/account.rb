@@ -22,7 +22,11 @@ class Account
 
   def target_progress
     result = budget_total.to_f - transaction_total.to_f
-    return sprintf "%.2f", result
+    return result.round(2)
+  end
+
+  def target_percentage(target)
+    return ((target_progress/target.amount)*100).round(2)
   end
 
   def transaction_total
@@ -94,7 +98,7 @@ class Account
   end
 
   def top_tag_format
-    return sprintf "%.2f", top_tag[ 1 ]
+    return top_tag[ 1 ].round(2)
   end
 
   def tag_progress( tag_id )
@@ -104,19 +108,19 @@ class Account
         result = tag.monthly_budget - tag_total( tag.id ).to_f 
       end
     end
-      return sprintf "%.2f", result
+      return result.round(2)
   end
 
   def budget_total
     result = 0
-    @tags.each { |t| result += t.monthly_budget }
-    return sprintf "%.2f", result
+    @tags.each { |tag| result += tag.monthly_budget }
+    return result.round(2)
   end
 
   def budget_remaining
     result = 0
     Transaction.find_this_month.each { |t| result += t.amount }
-    return sprintf "%.2f", result
+    return result.round(2)
   end
 
   def transactions_as_json

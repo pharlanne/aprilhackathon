@@ -1,3 +1,4 @@
+<% target = @account.targets[0] %>
 <div class="target-card">
   <div class="row">
     <div class="col s12 m7">
@@ -7,8 +8,11 @@
         </div>
         <div class="card-content">
         <div class="progress">
-          <div class="determinate" style="width: 70%"></div>
+          <div class="determinate" style="width: <%= @account.target_percentage(target) %>%"></div>
           </div>
+          <p><%= @account.target_percentage(target) %>%</p>
+          <p>£<%= @account.target_progress %>/£<%= target.amount %></p>
+          <p><%= target.days_left %> days left</p>
         </div>
       </div>
     </div>
