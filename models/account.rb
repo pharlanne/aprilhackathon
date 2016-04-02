@@ -19,7 +19,7 @@ class Account
 
   def total( input )
     result = 0
-    input.each { |t| result += t.amount }
+    input.each { |i| result += i.amount }
     return sprintf "%.2f", result
   end
 
