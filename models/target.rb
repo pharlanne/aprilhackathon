@@ -16,7 +16,7 @@ class Target
   end
 
   def date_format
-    date = @target_date.to_s.split("-")
+    date = @target_date.to_s.split( "-" )
     return "#{ date[ 2 ]}/#{ date[ 1 ]}/#{ date[ 0 ]}"
   end
 
@@ -25,7 +25,7 @@ class Target
   end
 
   def days_left
-    return(Date.parse(@target_date) - Date.today).to_i
+    return( Date.parse( @target_date ) - Date.today ).to_i
   end
 
   def self.find( id )

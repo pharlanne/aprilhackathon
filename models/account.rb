@@ -22,6 +22,7 @@ class Account
 
   # .round(2) will display 1.10 as 1.1 etc.
   # I think sprintf is better for displaying cash values. :)
+  # Just use .to_f to convert back to float when necessary.
   def target_progress
     result = budget_total.to_f - transaction_total.to_f
     return sprintf "%.2f", result
@@ -111,24 +112,23 @@ class Account
         result = tag.monthly_budget - tag_total( tag.id ).to_f 
       end
     end
-      return result.round(2)
+      return sprintf "%,.2f", result
   end
 
   def budget_total
     result = 0
     @tags.each { |tag| result += tag.monthly_budget }
-    return result.round(2)
+    return sprintf "%,.2f", result
   end
 
   def budget_remaining
     result = 0
     Transaction.find_this_month.each { |t| result += t.amount }
-    return result.round(2)
+    return sprintf "%,.2f", result
   end
 
   def transactions_as_json
-    result = {}
-    nested = {}
+    result = nested = {}
     counter = 1
 
     for transaction in @transactions
@@ -147,8 +147,7 @@ class Account
   end
 
   def merchants_as_json
-    result = {}
-    nested = {}
+    result = nested = {}
     counter = 1
 
     for merchant in @merchants
@@ -164,8 +163,7 @@ class Account
   end
 
   def tags_as_json
-    result = {}
-    nested = {}
+    result = nested = {}
     counter = 1
 
     for tag in @tags
@@ -180,3 +178,6 @@ class Account
     return result
   end
 end
+
+# notes - ignore
+# this week = (datetimenow - transaction_date) < 7
