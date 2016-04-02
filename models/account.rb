@@ -183,6 +183,7 @@ end
 # -- MY TO DO LIST -- IGNORE --
 # Add proper routes with conditions conditions & add proper file structure.
 # Add search / filter inputs to .erbs.
+# Move quote to account model and use different quotes for different targer percentages.
 # GO TO BED.
 # Add more account.percentage methods in case we need more progress bars.
 # Add merchants, tags, transactions etc. to side bar.

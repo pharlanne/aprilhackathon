@@ -6,6 +6,7 @@ require_relative "controllers/login"
 require_relative "controllers/merchants"
 require_relative "controllers/tags"
 require_relative "controllers/transactions"
+require_relative "models/random_quote"
 
 get "/" do
   options = {
@@ -18,6 +19,7 @@ get "/" do
 
   @account = Account.new( options )
   @target = @account.targets[ 0 ]
+  @quote = RandomQuote.new()
 
   if @account.targets.size == 0
     erb :home_new_user
