@@ -7,7 +7,7 @@ Income.delete_all
 Target.delete_all
 User.delete_all
 Question.delete_all
-Posts.delete_all
+Post.delete_all
 
 merchant1 = Merchant.create( "name" => "Tesco" )
 merchant2 = Merchant.create( "name" => "Scottish Power" )

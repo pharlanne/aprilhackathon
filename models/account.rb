@@ -3,6 +3,9 @@ require_relative "merchant"
 require_relative "tag"
 require_relative "income"
 require_relative "target"
+require_relative "user"
+require_relative "question"
+require_relative "post"
 
 class Account
   attr_reader :transactions, :merchants, :tags, :incomes, :targets
