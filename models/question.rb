@@ -5,6 +5,7 @@ class Question
 
   def initialize( params )
     @id = nil || params[ "id" ].to_i
+    @user_id || params[ "user_id" ].to_i
     @title = params[ "title" ]
     @question_date = params[ "question_date" ].to_i
   end

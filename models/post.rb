@@ -5,6 +5,8 @@ class Post
 
   def initialize( params )
     @id = nil || params[ "id" ].to_i
+    @question_id = nil || params[ "question_id" ].to_i
+    @user_id = nil || params[ "user_id" ].to_i
     @response = params[ "title" ]
     @post_date = params[ "post_date" ]
     @reputation = params[ "reputation" ].to_i

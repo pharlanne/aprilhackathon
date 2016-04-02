@@ -1,4 +1,3 @@
-<% target = @account.targets[0] %>
 <div class="target-card">
   <div class="row">
     <div class="col s12 m7">
@@ -8,8 +7,9 @@
         </div>
         <div class="card-content">
         <div class="progress">
-          <div class="determinate" style="width: <%= @account.target_percentage(target) %>%"></div>
+          <div class="determinate" style="width: <%= @account.target_percentage( @target ) %>%"></div>
           </div>
+<<<<<<< HEAD
           <div class="target-summary">
           <p><%= @account.target_percentage(target) %>%</p>     <P><%= target.days_left %> days to go </p>
          <!--  <p>£<%= @account.target_progress %>/£<%= target.amount %></p> -->
@@ -27,6 +27,11 @@
       <div class="card-content">
         <span class="card-title">fuk u</span>
         <p><%= @quote.message %></p>
+=======
+          <p><%= @account.target_percentage( @target ) %>%</p>
+          <p>£<%= @account.target_progress %>/£<%= @target.amount_format %></p>
+          <p><%= @target.days_left %> days left</p>
+>>>>>>> 41638f98ade999e9b34080ae2a1348e17e668371
         </div>
       </div>
     </div>
