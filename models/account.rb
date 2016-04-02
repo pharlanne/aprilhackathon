@@ -1,8 +1,8 @@
 require_relative "transaction"
 require_relative "merchant"
 require_relative "tag"
-require_relative "incomes"
-require_relative "targts"
+require_relative "income"
+require_relative "target"
 
 class Account
   attr_reader :transactions, :merchants, :tags, :incomes, :targets
@@ -13,6 +13,8 @@ class Account
     @tags = params[ "tags" ]
     @incomes = params[ "incomes" ]
     @targets = params[ "targets" ]
+    @questions = params[ "questions" ]
+    @posts = params[ "posts" ]
   end
 
   def total

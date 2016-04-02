@@ -1,7 +1,7 @@
 DROP TABLE Transactions;
 DROP TABLE Merchants;
 DROP TABLE Tags;
-DROP TABLE Incomes;
+DROP TABLE Income;
 DROP TABLE Targets;
 
 CREATE TABLE Merchants (
