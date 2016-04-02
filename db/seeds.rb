@@ -163,7 +163,7 @@ target1 = Target.create(
 user1 = User.create(
   "username" => "Anne",
   "reputation" => 1,
-  "Avatar" => ""
+  "avatar" => ""
 )
 
 question1 = Question.create(

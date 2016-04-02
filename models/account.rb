@@ -8,7 +8,7 @@ require_relative "question"
 require_relative "post"
 
 class Account
-  attr_reader :transactions, :merchants, :tags, :incomes, :targets
+  attr_reader :transactions, :merchants, :tags, :incomes, :targets, :questions, :posts
 
   def initialize( params )
     @transactions = params[ "transactions" ]
@@ -20,9 +20,20 @@ class Account
     @posts = params[ "posts" ]
   end
 
-  def total( input )
+  def target_progress
+    result = budget_total.to_f - transaction_total.to_f
+    return sprintf "%.2f", result
+  end
+
+  def transaction_total
     result = 0
-    input.each { |i| result += i.amount }
+    @transactions.each { |t| result += t.amount }
+    return sprintf "%.2f", result
+  end
+
+  def income_total
+    result = 0
+    @incomes.each { |i| result += i.amount }
     return sprintf "%.2f", result
   end
 
