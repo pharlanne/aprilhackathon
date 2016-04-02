@@ -1,16 +1,10 @@
-require_relative('../account')
-require_relative('../income')
-require_relative('../merchant')
-require_relative('../question')
-require_relative('../tag')
-require_relative('../target')
-require_relative('../transaction')
-require_relative('../user')
+require_relative('../models/account')
+
 
 get 'transaction/new' do
-  @merchants = Merchant.all
-  @tags = Tag.all
-  erb:"transaction/new"
+  options = { 'transactions' => Transaction.all, "merchants" => Merchants.all, "tags" => Tags.all, "income" => Income.all }
+  @account = Account.new(options)
+  erb :"transaction/new"
 end
 
 post 'transaction' do

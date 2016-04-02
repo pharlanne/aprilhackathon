@@ -1,8 +1,12 @@
-require_relative('../account')
-require_relative('../income')
-require_relative('../merchant')
-require_relative('../question')
-require_relative('../tag')
-require_relative('../target')
-require_relative('../transaction')
-require_relative('../user')
+require_relative('../models/account')
+
+
+
+
+get '/income/new' do
+  erb :""
+end
+
+post '/income' do
+  redirect to('/')
+end
