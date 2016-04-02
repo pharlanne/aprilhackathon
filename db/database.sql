@@ -45,8 +45,8 @@ CREATE TABLE Users (
 
 CREATE TABLE Questions (
   id SERIAL8 PRIMARY KEY,
-  question VARCHAR( 255 ),
-  post_date DATE,
+  title VARCHAR( 255 ),
+  question_date DATE,
   user_id REFERENCES Users
 );
 
@@ -54,6 +54,8 @@ CREATE TABLE Posts (
   id SERIAL8 PRIMARY KEY,
   response TEXT,
   post_date DATE,
+  reputation INT8,
+
   user_id REFERENCES Users,
   question_id REFERENCES Questions
 );
