@@ -8,7 +8,7 @@ require_relative "question"
 require_relative "post"
 
 class Account
-  attr_reader :transactions, :merchants, :tags, :incomes, :targets
+  attr_reader :transactions, :merchants, :tags, :incomes, :targets, :questions, :posts
 
   def initialize( params )
     @transactions = params[ "transactions" ]
@@ -18,6 +18,11 @@ class Account
     @targets = params[ "targets" ]
     @questions = params[ "questions" ]
     @posts = params[ "posts" ]
+  end
+
+  def target_progress
+    result = budget_total.to_f - transaction_total.to_f
+    return sprintf "%.2f", result
   end
 
   def transaction_total
