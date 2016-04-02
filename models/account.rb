@@ -22,7 +22,8 @@ class Account
 
   # .round(2) will display 1.10 as 1.1 etc.
   # I think sprintf is better for displaying cash values. :)
-  # Just use .to_f to convert back to float when necessary.
+  # Just use .to_f to convert back to float for calculations.
+  
   def target_progress
     result = budget_total.to_f - transaction_total.to_f
     return sprintf "%.2f", result
@@ -102,7 +103,7 @@ class Account
   end
 
   def top_tag_format
-    return top_tag[ 1 ].round(2)
+    return sprintf "%.2f", top_tag[ 1 ]
   end
 
   def tag_progress( tag_id )
@@ -118,7 +119,7 @@ class Account
   def budget_total
     result = 0
     @tags.each { |tag| result += tag.monthly_budget }
-    return result
+    return sprintf "%.2f", result
   end
 
   def budget_remaining
@@ -179,5 +180,17 @@ class Account
   end
 end
 
-# notes - ignore
-# this week = (datetimenow - transaction_date) < 7
+# -- MY TO DO LIST -- IGNORE --
+# Add proper routes with conditions conditions & add proper file structure.
+# Add search / filter inputs to .erbs.
+# GO TO BED.
+# Add more account.percentage methods in case we need more progress bars.
+# Add merchants, tags, transactions etc. to side bar.
+# Add hrefs to the above to link to proper routes.
+# Give targets a start date.
+# Make target progress only use transactions since target start.
+# SQL 'this month' requests need to check year.
+# Different main page if account.targets.size == 0
+# This week = (date now - transaction date) < 7
+# Write seed data that isn't retarded.
+# Need edit button for main page/target.

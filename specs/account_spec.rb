@@ -25,7 +25,6 @@ class TestAccount < MiniTest::Test
     transactions = [ transaction1, transaction2  ]
 
     target = Target.new( "amount" => 1000, "target_date" => 2016-07-18, "image_url" => "" )
-
     targets = [ target ]
 
     params = { "transactions" => transactions, "merchants" => merchants, "tags" => tags, "targets" => targets }

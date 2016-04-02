@@ -1,16 +1,13 @@
-require_relative('../models/account')
+require_relative "../models/account"
 
-
-get 'transaction/new' do
+get 'transactions/new' do
   options = { 'transactions' => Transaction.all, "merchants" => Merchants.all, "tags" => Tags.all, "income" => Income.all }
   @account = Account.new(options)
-  erb :"transaction/new"
+  erb :"transactions/new"
 end
 
-post 'transaction' do
+post 'transactions' do
   @transaction = Transaction.new
   @transaction.create
-  redirect to ('transaction/new')
+  redirect to ('transactions/new')
 end
-
-
