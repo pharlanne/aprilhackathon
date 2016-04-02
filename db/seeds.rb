@@ -156,7 +156,7 @@ income3 = Income.create(
 target1 = Target.create(
   "name" => "Jarrods Birthday Present",
   "amount" => 500,
-  "target_date" => "18-July-16",
+  "target_date" => "11-May-16",
   "image_url" => ""
 )
 
