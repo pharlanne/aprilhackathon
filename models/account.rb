@@ -118,7 +118,7 @@ class Account
   def budget_total
     result = 0
     @tags.each { |tag| result += tag.monthly_budget }
-    return sprintf "%,.2f", result
+    return result
   end
 
   def budget_remaining
