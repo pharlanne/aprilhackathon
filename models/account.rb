@@ -17,9 +17,9 @@ class Account
     @posts = params[ "posts" ]
   end
 
-  def total
+  def total( input )
     result = 0
-    @transactions.each { |t| result += t.amount }
+    input.each { |t| result += t.amount }
     return sprintf "%.2f", result
   end
 
