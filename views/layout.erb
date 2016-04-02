@@ -5,21 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/style.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 </head>
 <body>
   <header>
     <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Visuu</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="#">link1</a></li>
-          <li><a href="#">link2</a></li>
-          <li><a href="#">JavaScript lol</a></li>
-        </ul>
-      </div>
-    </nav>
+     <div class="nav-wrapper">
+       <a href="#!" class="brand-logo">Logo</a>
+       <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
+       <ul class="side-nav" id="mobile-demo">
+         <li><a href="#">Link1</a></li>
+         <li><a href="#">Link2</a></li>
+         <li><a href="#">Javascript</a></li>
+         <li><a href="#">Mobile</a></li>
+       </ul>
+     </div>
+   </nav>
   </header>
   <%= yield %>
+  <script type="text/javascript">
+    $( document ).ready(function(){
+      $(".button-collapse").sideNav();
+    });
+  </script>
 </body>
 </html>
