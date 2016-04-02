@@ -20,9 +20,15 @@ class Account
     @posts = params[ "posts" ]
   end
 
-  def total( input )
+  def transaction_total
     result = 0
-    input.each { |i| result += i.amount }
+    @transactions.each { |t| result += t.amount }
+    return sprintf "%.2f", result
+  end
+
+  def income_total
+    result = 0
+    @incomes.each { |i| result += i.amount }
     return sprintf "%.2f", result
   end
 
