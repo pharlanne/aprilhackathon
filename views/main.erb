@@ -1,8 +1,2 @@
-
-
-
-
-
-<p> Progress: <%= @account.budget_total.to_f - @account.transaction_total.to_f  %> / <%=  @account.targets[0].amount %></p>
+<p> Progress: <%= @account.target_total  %> / <%=  @account.targets[0].amount %></p>
 <p> Date:  <%= @account.targets[0].date_format %> </p>
-
