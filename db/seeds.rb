@@ -13,16 +13,25 @@ merchant1 = Merchant.create( "name" => "Tesco" )
 merchant2 = Merchant.create( "name" => "Scottish Power" )
 merchant3 = Merchant.create( "name" => "Amazon" )
 merchant4 = Merchant.create( "name"=> "Edinburgh City Council" )
-merchant5 = Merchant.create( "name" => "Dominos Pizza" )
+merchant5 = Merchant.create( "name" => "Domino's Pizza" )
 merchant6 = Merchant.create( "name" => "CodeClan" )
 merchant7 = Merchant.create( "name" => "Waitrose" )
 merchant8 = Merchant.create( "name" => "Real Foods" )
+merchant9 = Merchant.create( "name" => "Sainsbury's" )
+merchant10 = Merchant.create( "name" => "Costa Coffee" )
+merchant11 = Merchant.create( "name" => "Boots" )
+merchant12 = Merchant.create( "name" => "National Line" )
 
 tag1 = Tag.create( "name" => "Groceries", "monthly_budget" => 250.00 )
 tag2 = Tag.create( "name" => "Utilities", "monthly_budget" => 750.00 )
 tag3 = Tag.create( "name" => "Travel", "monthly_budget" => 100.00 )
-tag4 = Tag.create( "name" => "Food", "monthly_budget" => 50.00 )
+tag4 = Tag.create( "name" => "Business", "monthly_budget" => 50.00 )
 tag5 = Tag.create( "name" => "Education", "monthly_budget" => 1000.00 )
+tag6 = Tag.create( "name" => "Childcare", "monthly_budget" => 500.00 )
+tag7 = Tag.create( "name" => "Gift", "monthly_budget" => 0.00 )
+tag8 = Tag.create( "name" => "Clothing", "monthly_budget" => 100.00 )
+tag9 = Tag.create( "name" => "Cosmetics", "monthly_budget" => 35.00 )
+tag10 = Tag.create( "name" => "Insurance", "monthly_budget" => 150.00 )
 
 transaction1 = Transaction.create(
   "amount" => 103.27,
@@ -146,11 +155,16 @@ income3 = Income.create(
 
 target1 = Target.create(
   "name" => "Jarrod's Birthday Present",
+  "amount" => 500,
   "target_date" => "18-July-16",
-  "image_url" => "http://image.url"
+  "image_url" => "http://49.media.tumblr.com/tumblr_lzq1yuutbh1qbe0gto1_400.gif"
 )
 
-user1 = User.create()
+user1 = User.create(
+  "username" => "Anne",
+  "reputation" => 1,
+  "Avatar" => 
+)
 
 question1 = Question.create(
   "title" => "What is the best 0% APR credit card?",
@@ -162,37 +176,4 @@ question2 = Question.create(
   "title" => "Test question",
   "question_date" => "29-March-16",
   "user_id" => "1"
-)
-
-question3 = Question.create(
-  "title" => "",
-  "question_date" => "",
-  "user_id" => "1"
-)
-
-question4 = Question.create(
-  "title" => "",
-  "question_date" => "",
-  "user_id" => "1"
-)
-
-question5 = Question.create(
-  "title" => "",
-  "question_date" => "",
-  "user_id" => ""
-)
-
-post1 = Post.create(
-)
-
-post2 = Post.create(
-)
-
-post3 = Post.create(
-)
-
-post4 = Post.create(
-)
-
-post5 = Post.create(
 )
