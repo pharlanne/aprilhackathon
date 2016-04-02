@@ -1,8 +1,11 @@
 DROP TABLE Transactions;
 DROP TABLE Merchants;
 DROP TABLE Tags;
-DROP TABLE Income;
+DROP TABLE Incomes;
 DROP TABLE Targets;
+DROP TABLE Posts;
+DROP TABLE Questions;
+DROP TABLE Users;
 
 CREATE TABLE Merchants (
   id SERIAL8 PRIMARY KEY,
@@ -31,6 +34,7 @@ CREATE TABLE Incomes (
 
 CREATE TABLE Targets (
   id SERIAL8 PRIMARY KEY,
+  name VARCHAR( 255 ),
   amount FLOAT8,
   target_date DATE,
   image_url TEXT
@@ -47,7 +51,7 @@ CREATE TABLE Questions (
   id SERIAL8 PRIMARY KEY,
   title VARCHAR( 255 ),
   question_date DATE,
-  user_id REFERENCES Users
+  user_id INT8 REFERENCES Users( id )
 );
 
 CREATE TABLE Posts (
@@ -55,7 +59,6 @@ CREATE TABLE Posts (
   response TEXT,
   post_date DATE,
   reputation INT8,
-
-  user_id REFERENCES Users,
-  question_id REFERENCES Questions
+  user_id INT8 REFERENCES Users( id ),
+  question_id INT8 REFERENCES Questions( id )
 );

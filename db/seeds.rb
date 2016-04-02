@@ -5,6 +5,9 @@ Merchant.delete_all
 Tag.delete_all
 Income.delete_all
 Target.delete_all
+User.delete_all
+Question.delete_all
+Posts.delete_all
 
 merchant1 = Merchant.create( "name" => "Tesco" )
 merchant2 = Merchant.create( "name" => "Scottish Power" )
@@ -141,7 +144,55 @@ income3 = Income.create(
   "income_date" => "1-April-16"
 )
 
-target1 = Target.create (
-  "target_date" => "1-April-16",
+target1 = Target.create(
+  "name" => "Jarrod's Birthday Present",
+  "target_date" => "18-July-16",
   "image_url" => "http://image.url"
+)
+
+user1 = User.create()
+
+question1 = Question.create(
+  "title" => "What is the best 0% APR credit card?",
+  "question_date" => "1-April-16",
+  "user_id" => "1"
+)
+
+question2 = Question.create(
+  "title" => "Test question",
+  "question_date" => "29-March-16",
+  "user_id" => "1"
+)
+
+question3 = Question.create(
+  "title" => "",
+  "question_date" => "",
+  "user_id" => "1"
+)
+
+question4 = Question.create(
+  "title" => "",
+  "question_date" => "",
+  "user_id" => "1"
+)
+
+question5 = Question.create(
+  "title" => "",
+  "question_date" => "",
+  "user_id" => ""
+)
+
+post1 = Post.create(
+)
+
+post2 = Post.create(
+)
+
+post3 = Post.create(
+)
+
+post4 = Post.create(
+)
+
+post5 = Post.create(
 )
