@@ -46,7 +46,6 @@ class Income
       #{ params[ "amount" ]},
       '#{ params[ "income_date" ]}'
     )"
-
     SqlRunner.execute( query )
     return Income.new( Income.last_entry )
   end

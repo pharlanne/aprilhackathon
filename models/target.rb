@@ -48,7 +48,6 @@ class Target
       '#{ params[ "target_date" ]}',
       #{ params[ "image_url" ]}
     )"
-
     SqlRunner.execute( query )
     return Target.new( Target.last_entry )
   end

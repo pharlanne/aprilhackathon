@@ -142,7 +142,6 @@ income3 = Income.create(
 )
 
 target1 = Target.create (
-  "amount" => 10000,
   "target_date" => "1-April-16",
   "image_url" => "http://image.url"
 )
