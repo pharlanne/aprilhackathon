@@ -24,7 +24,11 @@ class TestAccount < MiniTest::Test
       )
     transactions = [ transaction1, transaction2  ]
 
-    params = { "transactions" => transactions, "merchants" => merchants, "tags" => tags }
+    target = Target.new( "amount" => 1000, "target_date" => 2016-07-18, "image_url" => "" )
+
+    targets = [ target ]
+
+    params = { "transactions" => transactions, "merchants" => merchants, "tags" => tags, "targets" => targets }
     @account = Account.new( params )
   end
 
@@ -44,8 +48,12 @@ class TestAccount < MiniTest::Test
     assert_equal( "Groceries", @account.tags[ 0 ].name )
   end
 
-  def test_total
-    assert_equal(( sprintf "%0.2f", 150.00 ), @account.total )
+  def test_target_amount
+    assert_equal( 1000, @account.targets[ 0 ].amount )
+  end
+
+  def test_transaction_total
+    assert_equal(( sprintf "%0.2f", 150.00 ), @account.transaction_total )
   end
 
   def test_merchant_total

@@ -1,10 +1,8 @@
 
-<p> Total Expenses:</p> <%= @account.total(@account.transactions) %>
 
 
-<p> Total Credits:</p> <%= @account.total(@account.transactions) %>
 
-<p> Target: </p>
-<p> Date: </p>
 
-<%= @account.targets.first %>
+<p> Progress: <%= @account.budget_total.to_f - @account.transaction_total.to_f  %> / <%=  @account.targets[0].amount %></p>
+<p> Date:  <%= @account.targets[0].date_format %> </p>
+
