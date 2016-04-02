@@ -4,5 +4,13 @@ body {
 .top-bar {
   height: 20px;
   background-color: #0097A7;
+}
 
+.target-card{
+  margin-top: 10px;
+}
+
+.progress{
+  height: 12px;
+  border-radius: 30px;
 }
