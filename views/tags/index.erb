@@ -3,5 +3,9 @@
 Monthly Budget: £<%= t.budget_format %><br>
 Expenditure This Month: £<%= @account.tag_total( t.id ) %><br>
 Progress: <%= @account.budget_percentage( t.id ) %>%<br>
+<div class="progress">
+  <div class="determinate" style="width: <%= @account.budget_percentage( t.id ) %>%">
+  </div>
+</div>
 <a href="/tags/<%= t.id %>">View</a><br><br>
 <% end %>

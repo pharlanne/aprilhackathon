@@ -11,7 +11,7 @@
     <% @account.incomes.each do |i| %>
       <tr>
         <td><%= i.amount %></td>
-        <td><%= i.income_date %></td>
+        <td><%= i.date_format %></td>
       </tr>
     <% end %>
   </tbody>
