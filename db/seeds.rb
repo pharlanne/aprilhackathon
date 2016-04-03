@@ -5,9 +5,9 @@ Merchant.delete_all
 Tag.delete_all
 Income.delete_all
 Target.delete_all
+Post.delete_all
 Question.delete_all
 User.delete_all
-Post.delete_all
 
 merchant1 = Merchant.create( "name" => "Tesco" )
 merchant2 = Merchant.create( "name" => "Scottish Power" )
@@ -174,6 +174,8 @@ user2 = User.create(
 
 puts user1.id
 
+# questions
+
 question1 = Question.create(
   "title" => "What is the best 0% APR credit card?",
   "question_date" => "1-April-16",
@@ -198,12 +200,32 @@ question4 = Question.create(
   "user_id" => user1.id
   )
 
+# posts
+
 post_params = {
   "question_id" => question1.id,
   "user_id" => user2.id,
-  "response" => "This is a great question",
+  "response" => 'This is a great question',
   "post_date" => "29-March-16"
 }
 
-query = "INSERT INTO Posts (response, user_id, question_id) VALUES ( 'TESTPOST', #{user1.id}, #{question1.id} )"
-SqlRunner.execute( query )
+post1 = Post.create(post_params)
+
+post_params = {
+  "question_id" => question1.id,
+  "user_id" => user1.id,
+  "response" => 'Thanks for the response, I am now rich.',
+  "post_date" => "29-March-16"
+}
+
+post2 = Post.create(post_params)
+
+post_params = {
+  "question_id" => question1.id,
+  "user_id" => user2.id,
+  "response" => 'Its ok, Im Bill Gates',
+  "post_date" => "29-March-16"
+}
+
+post3 = Post.create(post_params)
+
