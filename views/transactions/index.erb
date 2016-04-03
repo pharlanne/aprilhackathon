@@ -1,3 +1,12 @@
+  <form class="search" action="/transactions" method="get">
+  <label>Filter</label>
+  <select class="browser-default">
+    <option value="" disabled selected>Choose your option</option>
+    <option value="1">All</option>
+    <option value="2">This Month</option>
+  </select>
+  </form>
+            
 <h2> Transactions    <a href="transactions/new">   +</a></h2> 
 
 <table class="bordered striped ">
@@ -29,8 +38,6 @@
                 <td><%= transaction.date_format %></td>
 
                 <td>£<%= sprintf "%.2f" % transaction.amount %></td>
-                
-               
 
                 <td><a href="/transactions/<%= transaction.id %>">View</a></td>
               </tr>
