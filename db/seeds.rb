@@ -228,4 +228,3 @@ post_params = {
 }
 
 post3 = Post.create(post_params)
-
