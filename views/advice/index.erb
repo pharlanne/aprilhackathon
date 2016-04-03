@@ -5,7 +5,7 @@
   <p>from:
   <%= User.find(each.user_id).username %>
   </p>
-  <p><a href="">See Responses</a></p>
+  <p><a href="advice/posts/<%= each.id %>">See Responses</a></p>
   <hr>
 <% end %>
 
