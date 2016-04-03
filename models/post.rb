@@ -1,13 +1,13 @@
 require_relative "../db/sql_runner"
 
 class Post
-  attr_reader :response, :post_date, :reputation, :user_id
+  attr_reader :response, :post_date, :reputation, :user_id, :id
 
   def initialize( params )
     @id = nil || params[ "id" ].to_i
     @question_id = nil || params[ "question_id" ].to_i
     @user_id = nil || params[ "user_id" ].to_i
-    @response = params[ "title" ]
+    @response = params[ "response" ]
     @post_date = params[ "post_date" ]
     @reputation = params[ "reputation" ].to_i
   end
@@ -16,6 +16,12 @@ class Post
    query = "SELECT * FROM Posts WHERE id = #{ id.to_i }"
    result = SqlRunner.execute( query )
    return Post.new( result[ 0 ])
+  end
+
+  def self.find_responses( id )
+   query = "SELECT * FROM Posts WHERE question_id = #{id}"
+   result = SqlRunner.execute( query )
+   return result.map { |post| Post.new( post )}  
   end
 
   def self.all
@@ -29,8 +35,8 @@ class Post
     VALUES (
       '#{ params[ "response" ] }',
       '#{ params[ "post_date" ]}',
-      '#{ params{ "user_id" }}',
-      '#{ params{ "question_id" }}'
+      #{ params[ 'user_id' ]},
+      #{ params[ 'question_id' ]}
     )"
     SqlRunner.execute( query )
     return Post.new( Post.last_entry )
