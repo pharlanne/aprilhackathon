@@ -1,1 +1,12 @@
-This is the index page to display all questions.
+<p>Ask your friends:</p>
+
+<% @questions.each do |each| %>
+  <%= each.title %>
+  <p>from:
+  <%= User.find(each.user_id).username %>
+  </p>
+  <p><a href="">See Responses</a></p>
+  <hr>
+<% end %>
+
+<a href="/advice/new">Post New Question</a>

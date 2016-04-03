@@ -1,7 +1,7 @@
 require_relative "../db/sql_runner"
 
 class User
-  attr_reader :username, :reputation, :avatar
+  attr_reader :username, :reputation, :avatar, :id
 
   def initialize( params )
     @id = nil || params[ "id" ].to_i
@@ -11,13 +11,13 @@ class User
   end
 
   def self.find( id )
-   query = "SELECT * FROM Users WHERE id = #{ id.to_i }"
+   query = "SELECT * FROM Users WHERE id = #{ id }"
    result = SqlRunner.execute( query )
    return User.new( result[ 0 ])
   end
 
   def self.all
-    query = "SELECT * FROM Users ORDER BY target_date DESC"
+    query = "SELECT * FROM Users"
     users = SqlRunner.execute( query )
     return users.map { |t| User.new( t )}
   end

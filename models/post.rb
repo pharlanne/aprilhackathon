@@ -1,7 +1,7 @@
 require_relative "../db/sql_runner"
 
 class Post
-  attr_reader :response, :post_date, :reputation
+  attr_reader :response, :post_date, :reputation, :user_id
 
   def initialize( params )
     @id = nil || params[ "id" ].to_i
@@ -25,10 +25,12 @@ class Post
   end
 
   def self.create( params )
-    query = "INSERT INTO Posts ( response, post_date, reputation )
+    query = "INSERT INTO Posts ( response, post_date, user_id, question_id )
     VALUES (
       '#{ params[ "response" ] }',
-      '#{ params[ "post_date" ]}'
+      '#{ params[ "post_date" ]}',
+      '#{ params{ "user_id" }}',
+      '#{ params{ "question_id" }}'
     )"
     SqlRunner.execute( query )
     return Post.new( Post.last_entry )

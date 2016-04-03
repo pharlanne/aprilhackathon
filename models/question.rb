@@ -1,11 +1,11 @@
 require_relative "../db/sql_runner"
 
 class Question
-  attr_reader :title, :question_date
+  attr_reader :title, :question_date, :user_id, :id
 
   def initialize( params )
     @id = nil || params[ "id" ].to_i
-    @user_id || params[ "user_id" ].to_i
+    @user_id = params[ "user_id" ].to_i
     @title = params[ "title" ]
     @question_date = params[ "question_date" ].to_i
   end
@@ -23,10 +23,11 @@ class Question
   end
 
   def self.create( params )
-    query = "INSERT INTO Questions ( title, question_date )
+    query = "INSERT INTO Questions ( title, question_date, user_id )
     VALUES (
       '#{ params[ "title" ] }',
-      '#{ params[ "question_date" ]}'
+      '#{ params[ "question_date" ]}',
+      '#{ params[ "user_id" ]}'
     )"
     SqlRunner.execute( query )
     return Question.new( Question.last_entry )
