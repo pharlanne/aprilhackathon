@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <h3>Incomes  <a href="incomes/new">   +</a></h3>
+=======
+<h3>Incomes</h3>
+>>>>>>> 9b3478ac747ea74607f9fe00f2fd254127aacddf
 
 <table class="bordered striped ">
   <thead>
@@ -10,10 +14,9 @@
   <tbody>
     <% @account.incomes.each do |i| %>
       <tr>
-        <td><%= i.amount %></td>
-        <td><%= i.income_date %></td>
+        <td>£<%= i.amount_format %></td>
+        <td><%= i.date_format %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-

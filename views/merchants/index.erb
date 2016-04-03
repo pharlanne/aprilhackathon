@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h3> Merchants   <a href="merchants/new">   +</a></h3> 
 
 
@@ -6,11 +7,18 @@
     <tr>
     </tr>
   </thead>
+=======
+<h3>Merchants<a href="merchants/new">+</a></h3> 
+
+<table class="bordered striped ">
+  <thead><tr><th></th></tr></thead>
+>>>>>>> 9b3478ac747ea74607f9fe00f2fd254127aacddf
   <tbody>
     <% @account.merchants.each do |merchant| %>
       <tr>
         <td>
           <%= merchant.name %><br>
+          Expenditure This Month: £<%= @account.merchant_total( merchant.id ) %>
         </td>
         <td><a href="/merchants/<%= merchant.id %>">View</a></td>
       </tr>
