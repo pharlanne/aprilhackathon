@@ -30,8 +30,21 @@ class Account
   end
 
   def target_percentage( target )
-    result = (( target_progress.to_f / target.amount ) * 100 )
-    return sprintf "%.2f", result
+    return (( target_progress.to_f / target.amount ) * 100 ).round
+  end
+
+  def budget_percentage( tag_id )
+    result = 0
+    for tag in @tags
+      if tag.id == tag_id
+        if tag.monthly_budget != 0
+          result = (( tag_total( tag.id ).to_f / tag.monthly_budget ) * 100 ).round
+        else
+          result = "0"
+        end
+      end
+    end
+    return result
   end
 
   def transaction_total

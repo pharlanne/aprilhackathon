@@ -1,5 +1,6 @@
 <% @account.tags.each do |t| %>
 <%= t.name %><br>
-<%= t.monthly_budget %><br><br>
-<%  %>
+Monthly Budget: £<%= t.budget_format %><br>
+Expenditure This Month: £<%= @account.tag_total( t.id ) %><br><br>
+<%= @account.budget_percentage( t.id ) %>%
 <% end %>
