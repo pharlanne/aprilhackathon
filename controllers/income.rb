@@ -19,12 +19,12 @@ get "/income" do
       "transactions" => Transaction.all,
       "merchants" => Merchant.all,
       "tags" => Tag.all,
-      "income" => Income.all,
+      "incomes" => Income.all,
       "targets" => Target.all
     }
+    @account = Account.new( options )
   end
-  @account = Account.new( options )
-  if @account.transactions.size == 0
+  if @account.incomes.size == 0
     erb :"/incomes/empty"
   else
     erb :"/incomes/index"
