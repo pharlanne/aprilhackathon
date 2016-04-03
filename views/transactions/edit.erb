@@ -1,3 +1,62 @@
-This is the edit transaction page.<br><br>
+<h3> Edit Transaction </h3>
 
-It should contain a form to edit the amount, transaction_date, merchant (select) and tag (select).
+<div class="row">
+  <form class="col s12" action="/transactions" method="post">
+    <div class="row">
+
+      <div class="input-field col s11">
+        <i class="material-icons prefix">payment</i>
+        <input type="number" step=0.01 name="amount" value=<%= @transaction.amount %>>
+        <label for="amount">Amount</label>
+      </div>
+
+      <div class="input-field col s11">
+        <i class="material-icons prefix">date_range</i>
+        <input type="date" name="date" value=<%= @transaction.transaction_date%>>
+        <label for="date"></label>
+      </div>
+
+      <div class="input-field col s11">
+        <i class="material-icons prefix">shopping_basket</i>
+        <div class="col s11 offset-s1">
+        <select class="browser-default" name="merchant_id">
+          <% @account.merchants.each do |merchant| %>
+           <option value="<%= merchant.id %>"
+             <% if merchant.id == @transaction.merchant_id %>
+               selected ="true"
+             <% end %>>
+            <%= merchant.name %>
+            </option>
+          <% end %>
+        </select>
+        </div>
+        </div>
+
+      </div>
+      <div class="input-field col s11">
+        <i class="material-icons prefix">turned_in</i>
+        <div class="col s11 offset-s1">
+        <select class="browser-default" name="tag_id">
+        <% @account.tags.each do |tag| %>
+          <option value="<%= tag.id %>"
+            <% if tag.id == @transaction.tag_id %>
+            selected="true"
+            <% end %>>
+            <%= tag.name %>
+          </option>
+        <% end %>
+        </select>
+        </div>
+      </div>
+
+
+      <div class="row">
+         <div class="col s12"></div>
+         <div id="theplus" class="col s3 offset-s5"><input type="submit" class="btn-floating btn-large center waves-effect waves-light cyan" value="+"></div>
+       </div>
+   
+
+           
+    
+  </form>
+</div>
