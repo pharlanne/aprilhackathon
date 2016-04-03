@@ -1,15 +1,42 @@
+<h3> Transaction Info</h3>
+
+<ul class="collection">
+  <li class="collection-item avatar">
+    <i class="material-icons circle yellow">payment</i>
+    <span class="title">Amount</span>
+    <p>£<%= @transaction.amount_format %> <br>
+    </p>
+  </li>
+
+  <li class="collection-item avatar">
+    <i class="material-icons circle">date_range</i>
+    <span class="title">Date</span>
+    <p><%= @transaction.date_format %> <br>
+    </p>
+  </li>
+
+  <li class="collection-item avatar">
+    <i class="material-icons circle cyan">shopping_basket</i>
+    <span class="title">Merchant</span>
+    <p><% @account.merchants.each do |merchant| %>
+        <% if merchant.id.to_i == @transaction.merchant_id%>
+        <%= merchant.name %>
+        <% end %>
+        <% end %> <br>
+    </p>
+  </li>
+
+  <li class="collection-item avatar">
+    <i class="material-icons circle red">turned_in</i>
+    <span class="title">Tag</span>
+    <p> <% for tag in @account.tags %>
+        <% if tag.id.to_i == @transaction.tag_id%>
+        <%= tag.name %>
+        <% end %>
+        <% end %> <br>    
+    </p>
+  </li>
+</ul>
 
 
-<h5> Amount:</h5>
-<%= @transaction.amount %>
-
-<h5> Date:</h5>
-<%= @transaction.date_format %>
-
-<h2> Merchant:</h2>
-<% @account.merchants.each do |merchant| %>
-<% if merchant.id.to_i == @transaction.merchant_id%>
-<%= merchant.name %>
-<% end %>
-<% end %>
-
+<a id="editButton"class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Edit Transaction</a>

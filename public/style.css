@@ -64,3 +64,11 @@ img .responsive-img {
   margin:0;
   display: inline;
 }
+
+.Tshow{
+  margin-top: 50px;
+}
+#editButton{
+  margin:40px auto;
+  margin-left: 85px;
+}

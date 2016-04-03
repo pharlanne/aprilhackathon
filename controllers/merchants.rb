@@ -46,7 +46,7 @@ get "/merchants/:id" do
   }
   @account = Account.new( options )
   if @account.transactions.select { |t| t.merchant_id == @merchant.id }.size == 0
-    erb :"merchants/show_empty"
+    erb :"merchants/empty"
   else
     erb :"merchants/show"
   end

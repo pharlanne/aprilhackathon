@@ -1,3 +1,19 @@
-<% @account.incomes.each do |i| %>
-  <%= i.income_date %> <%= i.amount %><br>
-<% end %>
+<h1>Incomes</h1>
+
+<table class="bordered striped ">
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @account.incomes.each do |i| %>
+      <tr>
+        <td><%= i.amount %></td>
+        <td><%= i.income_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
