@@ -1,3 +1,29 @@
-This is the "new question" page.<br><br>
+<h3> New Question </h3>
 
-It should contain a form to allow the user to post a new question.
+<div class="row">
+  <form class="col s12" method="post" action="/advice">
+    <div class="row">
+      <div class="input-field col s11">
+        <i class="material-icons prefix">Title</i>
+        <input name="title" type="text" class="validate">
+        <label for="title">Title</label>
+      </div>
+      
+      <div class="input-field col s11">
+        <select name="user_id" class="browser-default" style="width: 30%">
+          <option value="" disabled selected>Who are you?</option>
+
+          <% @users.each do |each| %>
+          <option value="<%= each.id %>"><%= each.username %> </option>
+          <% end %>
+
+        </select>
+      </div>
+
+      <input type="hidden" name="question_date" value="<%= @date %>"/>
+      <input type="submit"></input>
+    </div>
+</div>
+  </form>
+
+

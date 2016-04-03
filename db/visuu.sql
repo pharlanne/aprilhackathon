@@ -62,3 +62,4 @@ CREATE TABLE Posts (
   user_id INT8 REFERENCES Users( id ),
   question_id INT8 REFERENCES Questions( id )
 );
+

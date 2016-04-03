@@ -45,6 +45,14 @@ end
 # Display additional information about and all transactions for a single transaction.
 get "/transactions/:id" do
   @transaction = Transaction.find( params[ :id ])
+  options = {
+    "transactions" => Transaction.all,
+    "merchants" => Merchant.all,
+    "tags" => Tag.all,
+    "income" => Income.all,
+    "targets" => Target.all
+  }
+  @account = Account.new( options )
   erb :"/transactions/show"
 end
 

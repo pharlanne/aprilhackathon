@@ -6,13 +6,13 @@
 
       <div class="input-field col s11">
         <i class="material-icons prefix">payment</i>
-        <input id="amount" type="number" class="validate">
+        <input id="amount" name="amount" type="number" step="any"class="validate">
         <label for="amount">Amount</label>
       </div>
 
       <div class="input-field col s11">
         <i class="material-icons prefix">date_range</i>
-        <input id="date" type="date" class="validate">
+        <input id="date" name="transaction_date"type="date" class="validate">
         <label for="date"></label>
       </div>
 
@@ -31,7 +31,7 @@
       <div class="input-field col s11">
         <i class="material-icons prefix">turned_in</i>
         <div class="col s11 offset-s1">
-        <select class="browser-default" name="merchant_id">
+        <select class="browser-default" name="tag_id">
          <% @account.tags.each do |tag| %>
            <option value='<%= tag.id %>'><%= tag.name %></option>
          <% end %>
@@ -41,7 +41,7 @@
 
       <div class="row">
          <div class="col s12"></div>
-         <div id="theplus" class="col s6 offset-s4"><input type="submit" class="btn-floating btn-large center waves-effect waves-light cyan" value="+"></div>
+         <div id="theplus" class="col s3 offset-s5"><input type="submit" class="btn-floating btn-large center waves-effect waves-light cyan" value="+"></div>
        </div>
    
 

@@ -5,8 +5,8 @@ Merchant.delete_all
 Tag.delete_all
 Income.delete_all
 Target.delete_all
-User.delete_all
 Question.delete_all
+User.delete_all
 Post.delete_all
 
 merchant1 = Merchant.create( "name" => "Tesco" )
@@ -38,142 +38,172 @@ transaction1 = Transaction.create(
   "transaction_date" => "1-April-16",
   "merchant_id" => merchant1.id,
   "tag_id" => tag1.id
-)
+  )
 
 transaction2 = Transaction.create(
   "amount" => 75.50,
   "transaction_date" => "2-April-16",
   "merchant_id" => merchant2.id,
   "tag_id" => tag2.id
-)
+  )
 
 transaction3 = Transaction.create(
   "amount" => 450.00,
   "transaction_date" => "1-April-16",
   "merchant_id" => merchant3.id,
   "tag_id" => tag2.id
-)
+  )
 
 transaction4 = Transaction.create(
   "amount" => 62.50,
   "transaction_date" => "2-April-16",
   "merchant_id" => merchant4.id,
   "tag_id" => tag2.id
-)
+  )
 
 transaction5 = Transaction.create(
   "amount" => 1500,
   "transaction_date" => "14-February-16",
   "merchant_id" => merchant6.id,
   "tag_id" => tag5.id
-)
+  )
 
 transaction6 = Transaction.create(
   "amount" => 24.99,
   "transaction_date" => "11-April-16",
   "merchant_id" => merchant1.id,
   "tag_id" => tag1.id
-)
+  )
 
 transaction7 = Transaction.create(
   "amount" => 18.51,
   "transaction_date" => "7-April-16",
   "merchant_id" => merchant1.id,
   "tag_id" => tag1.id
-)
+  )
 
 transaction8 = Transaction.create(
  "amount" => 156,
  "transaction_date" => "11-April-16",
  "merchant_id" => merchant6.id,
  "tag_id" => tag5.id
-)
+ )
 
 transaction9 = Transaction.create(
   "amount" => 26.91,
   "transaction_date" => "28-March-16",
   "merchant_id" => merchant7.id,
   "tag_id" => tag1.id
-)
+  )
 
 transaction10 = Transaction.create(
   "amount" => 41.60,
   "transaction_date" => "22-March-16",
   "merchant_id" => merchant1.id,
   "tag_id" => tag1.id
-)
+  )
 
 transaction11 = Transaction.create(
   "amount" => 4.28,
   "transaction_date" => "23-March-16",
   "merchant_id" => merchant8.id,
   "tag_id" => tag1.id
-)
+  )
 
 transaction12 = Transaction.create(
   "amount" => 4.28,
   "transaction_date" => "17-April-16",
   "merchant_id" => merchant8.id,
   "tag_id" => tag1.id
-)
+  )
 
 transaction13 = Transaction.create(
   "amount" => 22.50,
   "transaction_date" => "19-April-16",
   "merchant_id" => merchant5.id,
   "tag_id" => tag4.id
-)
+  )
 
 transaction14 = Transaction.create(
   "amount" => 22.50,
   "transaction_date" => "4-April-16",
   "merchant_id" => merchant5.id,
   "tag_id" => tag4.id
-)
+  )
 
 transaction15 = Transaction.create(
   "amount" => 22.50,
   "transaction_date" => "12-February-16",
   "merchant_id" => merchant5.id,
   "tag_id" => tag4.id
-)
+  )
 
 income1 = Income.create(
   "amount" => 2500,
   "income_date" => "1-February-16"
-)
+  )
 
 income2 = Income.create(
   "amount" => 2500,
   "income_date" => "1-March-16"
-)
+  )
 
 income3 = Income.create(
   "amount" => 2500,
   "income_date" => "1-April-16"
-)
+  )
 
 target1 = Target.create(
   "name" => "Jarrods Birthday Present",
   "amount" => 500,
   "target_date" => "11-May-16",
   "image_url" => ""
-)
+  )
 
 user1 = User.create(
   "username" => "Anne",
   "reputation" => 1,
   "avatar" => ""
-)
+  )
+
+user2 = User.create(
+  "username" => "Peter",
+  "reputation" => 2,
+  "avatar" => ""  
+  )
+
+puts user1.id
 
 question1 = Question.create(
   "title" => "What is the best 0% APR credit card?",
   "question_date" => "1-April-16",
-  "user_id" => "1"
-)
+  "user_id" => user1.id
+  )
 
 question2 = Question.create(
   "title" => "Test question",
   "question_date" => "29-March-16",
-  "user_id" => "1"
-)
+  "user_id" => user1.id
+  )
+
+question3 = Question.create(
+  "title" => "If I had £1000 should I start an ISA",
+  "question_date" => "29-March-16",
+  "user_id" => user1.id
+  )
+
+question4 = Question.create(
+  "title" => "Where should I start a pension?",
+  "question_date" => "29-March-16",
+  "user_id" => user1.id
+  )
+
+post_params = {
+  "question_id" => question1.id,
+  "user_id" => user2.id,
+  "response" => "This is a great question",
+  "post_date" => "29-March-16"
+}
+
+query = "INSERT INTO Posts (response, user_id, question_id) VALUES ( 'TESTPOST', #{user1.id}, #{question1.id} )"
+SqlRunner.execute( query )

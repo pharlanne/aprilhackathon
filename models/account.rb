@@ -40,7 +40,7 @@ class Account
         if tag.monthly_budget != 0
           result = (( tag_total( tag.id ).to_f / tag.monthly_budget ) * 100 ).round
         else
-          result = "0"
+          result = 0
         end
       end
     end
