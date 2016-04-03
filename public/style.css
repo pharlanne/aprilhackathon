@@ -1,6 +1,7 @@
 body {
  font-family: 'Nunito', Open Sans;
 }
+
 .top-bar {
   height: 20px;
   background-color: #0097A7;
@@ -15,32 +16,34 @@ body {
   border-radius: 30px;
   background-color: #0097A7;
 }
+
 .progress .determinate{
   background-color: #00BCD4;
 }
 
 .target-summary {
   font-family: 'Nunito', Open Sans;
-  font-size: 40px;
   text-align: center;
-  color:#0097A7;
+  color: #444;
+  font-size: 16px;
 }
 
 .card {
   margin-bottom: 0px;
 }
+
 .card .card-content {
   padding-top: 10px;
   text-align: center;
   font-size: 24px;
   font-style: italic;
-  color: #FFC107;
-
+  color: #999;
 }
 
 .row {
   margin-bottom: 5px;
 }
+
 img .responsive-img {
   height: 400px;
 }
