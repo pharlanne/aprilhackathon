@@ -17,11 +17,12 @@
     </tr>
   </thead>
   <tbody>
-    <% @account.merchants.each do |m| %>
+    <% @account.merchants.each do |merchant| %>
       <tr>
         <td>
-          <%= m.name %><br>
+          <%= merchant.name %><br>
         </td>
+        <td><a href="/merchants/<%= merchant.id %>">View</a></td>
       </tr>
     <% end %>
   </tbody>
