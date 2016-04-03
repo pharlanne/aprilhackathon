@@ -197,9 +197,6 @@ end
 # Add search / filter inputs to .erbs.
 # Move quote to account model and use different quotes for different targer percentages.
 # GO TO BED.
-# Add more account.percentage methods in case we need more progress bars.
-# Add merchants, tags, transactions etc. to side bar.
-# Add hrefs to the above to link to proper routes.
 # Give targets a start date.
 # Make target progress only use transactions since target start.
 # SQL 'this month' requests need to check year.
