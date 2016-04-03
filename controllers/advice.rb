@@ -2,12 +2,12 @@ require_relative "../models/question"
 
 # Display all questions.
 get "/advice" do
-  erb :"advice/index.erb"
+  erb :"advice/index"
 end
 
 # Create a new question.
 get "/advice/new" do
-  erb :"advice/new.erb"
+  erb :"advice/new"
 end
 
 # Display a single question and it's responses.
