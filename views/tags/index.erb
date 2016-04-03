@@ -1,3 +1,5 @@
-This is the index page to display all tags.<br><br>
-
-It should list, provide basic information and link to tags/:id/edit for each tag.
+<% @account.tags.each do |t| %>
+<%= t.name %><br>
+<%= t.monthly_budget %><br><br>
+<%  %>
+<% end %>
