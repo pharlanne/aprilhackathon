@@ -57,6 +57,7 @@ img .responsive-img {
   margin-top: 80px;
   margin-right: 100px;
 }
+
 #browser-default{
   display: inline;
 }
@@ -71,4 +72,8 @@ img .responsive-img {
 #editButton{
   margin:40px auto;
   margin-left: 85px;
+}
+
+.tag-progress{
+  width: 50%;
 }

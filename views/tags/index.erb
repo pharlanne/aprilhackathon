@@ -1,7 +1,22 @@
-<% @account.tags.each do |t| %>
-<%= t.name %><br>
-Monthly Budget: £<%= t.budget_format %><br>
-Expenditure This Month: £<%= @account.tag_total( t.id ) %><br>
-Progress: <%= @account.budget_percentage( t.id ) %>%<br>
-<a href="/tags/<%= t.id %>">View</a><br><br>
-<% end %>
+
+<h3>Tags</h3>
+<ul class="collection">
+
+ 
+    <p><% @account.tags.each do |t| %>
+    <li class="collection-item avatar">
+        <b><%= t.name %></b><br>
+        Monthly Budget: £<%= t.budget_format %><br>
+        Expenditure This Month: £<%= @account.tag_total( t.id ) %><br>
+        Progress: <%= @account.budget_percentage( t.id ) %>%<br>
+        <div class="tag-progress">
+        <div class="progress">
+         <div class="determinate" style="width: <%= @account.budget_percentage( t.id ) %>%">
+         </div>
+        </div>
+        </div>
+        <a href="/tags/<%= t.id %>">View</a><br><br>
+        </li>
+        <% end %> <br>
+    </p>
+</ul>
