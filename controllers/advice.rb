@@ -1,13 +1,21 @@
 require_relative "../models/question"
+require_relative "../models/post"
+require_relative "../models/user"
+require 'date'
 
 # Display all questions.
 get "/advice" do
-  erb :"advice/index.erb"
+  @posts = Post.all
+  @questions = Question.all
+  erb :'advice/index'
 end
 
 # Create a new question.
 get "/advice/new" do
-  erb :"advice/new.erb"
+  @users = User.all
+  current_time = DateTime.now
+  @date = current_time.strftime "%Y/%m/%d"
+  erb :"advice/new"
 end
 
 # Display a single question and it's responses.
@@ -17,6 +25,7 @@ end
 
 # Post new question.
 post "/advice" do
+  @params = params
   @Question = Question.create( params )
   redirect to "/advice"
 end

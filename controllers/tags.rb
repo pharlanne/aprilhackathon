@@ -46,7 +46,7 @@ get "/tags/:id" do
   }
   @account = Account.new( options )
   if @account.transactions.select { |t| t.tag_id == @tag.id }.size == 0
-    erb :"tags/show_empty"
+    erb :"tags/empty"
   else
     erb :"tags/show"
   end

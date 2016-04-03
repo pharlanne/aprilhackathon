@@ -1,6 +1,7 @@
 <% @account.tags.each do |t| %>
 <%= t.name %><br>
 Monthly Budget: £<%= t.budget_format %><br>
-Expenditure This Month: £<%= @account.tag_total( t.id ) %><br><br>
-<%= @account.budget_percentage( t.id ) %>%
+Expenditure This Month: £<%= @account.tag_total( t.id ) %><br>
+Progress: <%= @account.budget_percentage( t.id ) %>%<br>
+<a href="/tags/<%= t.id %>">View</a><br><br>
 <% end %>
