@@ -1,12 +1,13 @@
-<h2> Transactions    <a href="transactions/new">   +</a></h2> 
-
-<form class="search" action="/transactions" method="get">
-  <select id="filter" name="filter">
-    <option value="all">All</option>
-    <option value="month">This Month</option>
+  <form class="search" action="/transactions" method="get">
+  <label>Filter</label>
+  <select class="browser-default">
+    <option value="" disabled selected>Choose your option</option>
+    <option value="1">All</option>
+    <option value="2">This Month</option>
   </select>
-  <input type="submit" value="Submit">
-</form>
+  </form>
+            
+<h2> Transactions    <a href="transactions/new">   +</a></h2> 
 
 <table class="bordered striped ">
   <thead>
