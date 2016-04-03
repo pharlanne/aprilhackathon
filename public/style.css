@@ -44,3 +44,7 @@ body {
 img .responsive-img {
   height: 400px;
 }
+
+.btn-floating{
+  text-align: center;
+}
