@@ -50,10 +50,20 @@ post "/questions/:id/delete" do
 end
 
 # Posts & Responses 
+get '/advice/posts/new' do
+  @users = User.all
+  current_time = DateTime.now
+  erb :'advice/posts/new'
+end
+
+
+post '/advice/posts' do
+  return 'posted form'
+end
 
 get '/advice/posts/:id' do
   id = params['id']
   @question = Question.find( id )
   @responses = Post.find_responses(id)
-  erb :'advice/show_post'
+  erb :'advice/posts/show'
 end
