@@ -172,7 +172,23 @@ user2 = User.create(
   "avatar" => ""  
   )
 
-puts user1.id
+user3 = User.create(
+  "username" => "Jarrod",
+  "reputation" => 2,
+  "avatar" => ""  
+  )
+
+user4 = User.create(
+  "username" => "Matthew",
+  "reputation" => 2,
+  "avatar" => ""  
+  )
+
+user4 = User.create(
+  "username" => "Jeb!",
+  "reputation" => 2,
+  "avatar" => ""  
+  )
 
 # questions
 
@@ -183,7 +199,7 @@ question1 = Question.create(
   )
 
 question2 = Question.create(
-  "title" => "Test question",
+  "title" => "Whats the best bank?",
   "question_date" => "29-March-16",
   "user_id" => user1.id
   )
@@ -203,29 +219,39 @@ question4 = Question.create(
 # posts
 
 post_params = {
-  "question_id" => question1.id,
+  "question_id" => question2.id,
   "user_id" => user2.id,
-  "response" => 'This is a great question',
+  "response" => 'Ive been banking with Barclays and they seem fine',
   "post_date" => "29-March-16"
 }
 
 post1 = Post.create(post_params)
 
 post_params = {
-  "question_id" => question1.id,
+  "question_id" => question2.id,
   "user_id" => user1.id,
-  "response" => 'Thanks for the response, I am now rich.',
+  "response" => 'Yeah they are alright, but sometimes its slow',
   "post_date" => "29-March-16"
 }
 
 post2 = Post.create(post_params)
 
 post_params = {
-  "question_id" => question1.id,
+  "question_id" => question2.id,
   "user_id" => user2.id,
-  "response" => 'Its ok, Im Bill Gates',
+  "response" => 'Yeah, I like RBS though',
   "post_date" => "29-March-16"
 }
 
 post3 = Post.create(post_params)
+
+
+post_params = {
+  "question_id" => question2.id,
+  "user_id" => user1.id,
+  "response" => 'Didnt they crash the economy though?',
+  "post_date" => "29-March-16"
+}
+
+post4 = Post.create(post_params)
 
