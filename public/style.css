@@ -1,6 +1,11 @@
 body {
  font-family: 'Nunito', Open Sans;
 }
+h3{
+  text-align: center;
+  margin: 20px auto;
+
+}
 
 .top-bar {
   height: 20px;
@@ -49,5 +54,13 @@ img .responsive-img {
 }
 
 #theplus{
-  margin-top: 40px;
+  margin-top: 80px;
+  margin-right: 100px;
+}
+#browser-default{
+  display: inline;
+}
+#theJplus{
+  margin:0;
+  display: inline;
 }

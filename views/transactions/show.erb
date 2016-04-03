@@ -1,3 +1,15 @@
-This is the show page for transactions.<br><br>
 
-It should show all information for a transaction.
+
+<h5> Amount:</h5>
+<%= @transaction.amount %>
+
+<h5> Date:</h5>
+<%= @transaction.date_format %>
+
+<h2> Merchant:</h2>
+<% @account.merchants.each do |merchant| %>
+<% if merchant.id.to_i == @transaction.merchant_id%>
+<%= merchant.name %>
+<% end %>
+<% end %>
+
