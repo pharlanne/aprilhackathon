@@ -48,3 +48,12 @@ post "/questions/:id/delete" do
   Question.destroy( params[ :id ])
   redirect to "/advice"
 end
+
+# Posts & Responses 
+
+get '/advice/posts/:id' do
+  id = params['id']
+  @question = Question.find( id )
+  @responses = Post.find_responses(id)
+  erb :'advice/show_post'
+end
