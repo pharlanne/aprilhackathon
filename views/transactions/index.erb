@@ -1,3 +1,41 @@
-This is the index to display all transactions.<br><br>
+<h2> Transactions </h2>
 
-It should list, provide basic information and link to transactions/:id edit and post transactions:id/delete for each transaction.
+<table>
+  <thead>
+    <tr>
+      <th>Merchant</th>
+      <th>Tag</th>
+      <th>Date</th>
+      <th>Amount</th>
+      <th>View</th>
+    </tr>
+      </thead>
+       <tbody>
+
+            <% @account.transactions.each do |transaction| %>
+              <tr>
+                <% for merchant in @account.merchants %>
+                <% if merchant.id == transaction.merchant_id%>
+                <td><%= merchant.name %></td>
+                <% end %>
+                <% end %>
+
+                <% for tag in @account.tags %>
+                <% if tag.id == transaction.tag_id%>
+                <td><%= tag.name %></td>
+                <% end %>
+                <% end %>
+        
+                <td><%= transaction.date_format %></td>
+
+                <td>£<%= sprintf "%.2f" % transaction.amount %></td>
+                
+               
+
+                <td><a href="/transactions/<%= transaction.id %>">View</a></td>
+              </tr>
+            <% end %>
+      </tbody>
+
+
+
