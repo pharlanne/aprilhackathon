@@ -1,29 +1,51 @@
 <h3> Add Transaction </h3>
 
 <div class="row">
-  <form class="col s12">
+  <form class="col s12" action="/transactions" method="post">
     <div class="row">
+
       <div class="input-field col s11">
         <i class="material-icons prefix">payment</i>
         <input id="amount" type="number" class="validate">
         <label for="amount">Amount</label>
       </div>
+
       <div class="input-field col s11">
         <i class="material-icons prefix">date_range</i>
         <input id="date" type="date" class="validate">
         <label for="date"></label>
       </div>
+
       <div class="input-field col s11">
         <i class="material-icons prefix">shopping_basket</i>
-        <input id="merchant" type="text" class="validate">
-        <label for="merchant">Merchant</label>
+        <div class="col s11 offset-s1">
+        <select class="browser-default" name="merchant_id">
+         <% @account.merchants.each do |merchant| %>
+           <option value='<%= merchant.id %>'><%= merchant.name %></option>
+         <% end %>
+        </select>
+        </div>
+        </div>
+
       </div>
       <div class="input-field col s11">
         <i class="material-icons prefix">turned_in</i>
-        <input id="tag" type="text" class="validate">
-        <label for="tag">Tag</label>
+        <div class="col s11 offset-s1">
+        <select class="browser-default" name="merchant_id">
+         <% @account.tags.each do |tag| %>
+           <option value='<%= tag.id %>'><%= tag.name %></option>
+         <% end %>
+        </select>
+        </div>
       </div>
-    </div>
-    <a class="btn-floating btn-large center waves-effect waves-light cyan"><i class="material-icons">add</i></a>
+
+      <div class="row">
+         <div class="col s12"></div>
+         <div id="theplus" class="col s6 offset-s4"><input type="submit" class="btn-floating btn-large center waves-effect waves-light cyan" value="+"></div>
+       </div>
+   
+
+           
+    
   </form>
 </div>
