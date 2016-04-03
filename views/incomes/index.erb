@@ -10,7 +10,7 @@
   <tbody>
     <% @account.incomes.each do |i| %>
       <tr>
-        <td><%= i.amount %></td>
+        <td>£<%= i.amount_format %></td>
         <td><%= i.date_format %></td>
       </tr>
     <% end %>
