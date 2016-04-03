@@ -1,12 +1,20 @@
-<p>Ask your friends:</p>
+<h3>Get advice from the community</h3>
 
+<hr>
 <% @questions.each do |each| %>
+<blockquote>
   <%= each.title %>
   <p>from:
   <%= User.find(each.user_id).username %>
   </p>
   <p><a href="advice/posts/<%= each.id %>">See Responses</a></p>
   <hr>
+  </blockquote>
 <% end %>
 
-<a href="/advice/new">Post New Question</a>
+<blockquote>
+<p>
+<a href="/advice/new">  Post New Question</a>
+</p>
+</blockquote>
+

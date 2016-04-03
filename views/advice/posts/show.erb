@@ -1,6 +1,7 @@
 <h3> <%= @question.title %> </h3>
 
 <% @responses.each do |each| %>
+<blockquote>
 <p>
   <%= each.response %>
   <p> <%= User.find(each.user_id).username %>
@@ -8,7 +9,10 @@
 </p>
 
 <hr>
-
+</blockquote>
 <% end %>
 
-<a href="/advice/posts/new">Post response</a>
+
+<blockquote>
+  <a href="/advice/posts/new">Post response</a>
+</blockquote>
